@@ -5,3 +5,7 @@ src/tasks-config.json
 src/results.out
 src/docs/source/internal.rst
 Makefile
+**/*.pyc
+**/*.log
+**/*.out
+
