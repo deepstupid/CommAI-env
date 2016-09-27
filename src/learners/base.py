@@ -46,12 +46,12 @@ class RemoteLearner(BaseLearner):
 
     # send to learner, and get response;
     def next(self, input):
-        print("send: ", input)
-       	self.socket.send_string(str(input))
-        reply = self.socket.recv_string()
+       	#print("send: ", input)
+       	self.socket.send(input[0].encode())
+        reply = self.socket.recv().decode()
         return reply
 
     def try_reward(self, reward):
-        print("reward: ", input)
+        #print("reward: ", reward)
         reward = reward if reward is not None else 0
-        self.socket.send_string(str(reward))
+        self.socket.send(bytearray([reward]))

@@ -10,6 +10,10 @@
       "type": "tasks.competition.repetition.BeSilentTask",
       "world": "gw"
     },
+    "k1": {
+      "type": "tasks.competition.repetition.DoNotBeSilent",
+      "world": "gw"
+    },
     "g15": {
         "type": "tasks.competition.repetition.RepeatCharacterTask",
         "world": "gw"
@@ -171,7 +175,7 @@
     {
       "type": "core.scheduler.RandomTaskScheduler",
       "args": {
-          "tasks": ["k0", "g15", "k2", "k5", "k6", "k7", "k8", "k9" ]
+          "tasks": ["k0", "k1", "g15", "k2", "k5", "k6", "k7", "k8", "k9" ]
         }
     }
 }

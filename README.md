@@ -173,16 +173,14 @@ int main()
         int n = 0;
 
         boolean running = true;
-        // talk
         while (running) {
 
-            byte[] reward = client.recv(1);
+            byte reward = client.recv()[0];
 
-            byte[] teacherEnv = client.recv(1);
+            byte input = client.recv()[0];
 
-            // reply
-            client.send(String.valueOf( periodChar.charAt(n % periodChar.length()) ));
-            n += 1;
+            byte output = (byte) periodChar.charAt((n++) % periodChar.length());
+            client.send(new byte[] { output });
         }
 
         client.close();
